@@ -1,0 +1,19 @@
+POST http://localhost:3333/api/transcript
+Content-Type: application/json
+
+{
+  "videoUrl": "https://youtube.com/shorts/TtvZ9p__ZzE?si=zCUk1qwdtlt3vJXb"
+}
+
+###
+
+GET http://localhost:3333/api/links
+
+###
+
+GET http://localhost:3333/api/metrics
+
+###
+
+GET http://localhost:3333/teste2
+
