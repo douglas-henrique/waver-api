@@ -1,7 +1,5 @@
 import fs from 'fs'
 // @ts-ignore
-import { pipeline } from '@xenova/transformers'
-// @ts-ignore
 import { HfInference } from '@huggingface/inference'
 const TOKEN = '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'
 const hf = new HfInference(TOKEN)

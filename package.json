@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
-    "build": "tsc"
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,7 @@
   "devDependencies": {
     "@types/fluent-ffmpeg": "^2.1.24",
     "@types/node": "20.11.29",
+    "tsup": "^8.0.2",
     "tsx": "4.7.1",
     "typescript": "5.4.2"
   },
