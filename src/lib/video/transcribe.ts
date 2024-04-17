@@ -1,8 +1,6 @@
 import fs from 'fs'
-// @ts-ignore
 import { pipeline } from '@xenova/transformers'
-import { WaveFile } from 'wavefile';
-// @ts-ignore
+import wavefile from 'wavefile';
 import { HfInference } from '@huggingface/inference'
 const TOKEN = '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'
 const hf = new HfInference(TOKEN)
@@ -12,6 +10,9 @@ const options = { //Xenova/whisper-small configurations
     language: 'portuguese',
     task: 'transcribe',
 }
+
+const WaveFile = wavefile.WaveFile;
+
 
 export async function transcribeAudio(fileName: string) {
 
