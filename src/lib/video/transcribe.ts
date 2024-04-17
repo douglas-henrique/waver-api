@@ -18,7 +18,6 @@ export async function transcribeAudio(fileName: string) {
     let data = null;
 
     try {
-        console.log('[STARTING TRANSCRIBE]')
 
         const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-small');
 
@@ -45,9 +44,7 @@ export async function transcribeAudio(fileName: string) {
             }
         })
 
-        console.log(`Transcribe execution duration: ${(end - start) / 1000} seconds`);
     } catch (error) {
-        console.log('[ERROR TRANSCRIBE]', error)
         throw new Error('Error')
     } finally {
         return data

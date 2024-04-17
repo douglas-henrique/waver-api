@@ -15,28 +15,26 @@ const createMP3 = (videoName) => new Promise((resolve, reject) => {
         .outputOptions('-ab', '192k')
         .saveToFile(fileName)
         .on('progress', (progress) => {
-        if (progress.percent) {
-            console.log(`Processing: ${Math.floor(progress.percent)}% done`);
-        }
-    })
-        .on('end', () => {
-        fs_1.default.unlink(videoName, (err) => {
-            if (!err) {
-                console.log('FFmpeg has finished.');
-                resolve({
-                    fileName
-                });
+            if (progress.percent) {
             }
+        })
+        .on('end', () => {
+            fs_1.default.unlink(videoName, (err) => {
+                if (!err) {
+                    resolve({
+                        fileName
+                    });
+                }
+                reject({
+                    err
+                });
+            });
+        })
+        .on('error', (error) => {
+            console.error(error);
             reject({
-                err
+                error
             });
         });
-    })
-        .on('error', (error) => {
-        console.error(error);
-        reject({
-            error
-        });
-    });
 });
 exports.createMP3 = createMP3;
