@@ -12,7 +12,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": "./"
   },
   "baseUrl": ".",
   "paths": {
@@ -22,5 +24,6 @@
     "@/lib/*": [
       "./src/lib/*"
     ]
-  }
+  },
+  "include": ["src/**/*"]
 }
