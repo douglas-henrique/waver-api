@@ -14,8 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "NodeNext",
     "outDir": "dist",
-    "rootDir": "./",
-    "types": ["jsdom"]
+    "rootDir": "./"
   },
   "baseUrl": ".",
   "paths": {
