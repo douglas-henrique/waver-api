@@ -21,11 +21,9 @@ export async function createSummary(text: string) {
         })
  
         let end = performance.now();
-        console.log(`Summary execution duration: ${(end - start) / 1000} seconds`);
 
         return result
     } catch (error) {
-        console.log(error)
         throw new Error('Summary error')
     }
 }

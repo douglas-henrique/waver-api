@@ -12,13 +12,11 @@ export const createMP3 = (videoName: string) => new Promise<{ fileName?: string,
         .saveToFile(fileName)
         .on('progress', (progress) => {
             if (progress.percent) {
-                console.log(`Processing: ${Math.floor(progress.percent)}% done`);
             }
         })
         .on('end', () => {
             fs.unlink(videoName, (err) => {
                 if (!err) {
-                    console.log('FFmpeg has finished.');
                     resolve({
                         fileName
                     })
